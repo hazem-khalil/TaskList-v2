@@ -19,7 +19,11 @@ class TasksController extends Controller
 
     public function store()
     {
-        // 
+        $this->validate(request(), [
+            'name' => 'required|max:255',
+        ]);
+
+        
     }
 
     public function destroy()

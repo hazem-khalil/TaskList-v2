@@ -6,7 +6,7 @@ Route::get('/', function () {
 });
 
 Route::get('/tasks', 'TasksController@index');
-Route::post('/tasks/{task}', 'TasksController@store');
+Route::post('/tasks', 'TasksController@store');
 Route::post('/tasks/{task}', 'TasksController@destroy');
 
 Auth::routes();

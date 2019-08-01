@@ -2,21 +2,18 @@
 
 @section('content')
 <div class="container">
-    <form action="/tasks" method="POST">
+    <form action="/tasks/" method="POST">
         @csrf
-        <div class="form-group">
+        <div class="form-group col-sm-6">
             <label for="name">Tasks</label>
 
-            <div class="col-sm-6">
-                <input type="text" id="name" name="name" class="form-control">
-            </div>
+            <input type="text" id="name" name="name" class="form-control">
         </div>
 
-        <div class="form-group">
-            <div class="col-sm-6">
-                <button type="submit" class="btn btn-default">Add task</button>
-            </div>
+        <div class="form-group col-sm-6">
+            <button type="submit" class="btn btn-default">Add task</button>
         </div>
-    </form>    
+    </form>
+    @include ('layouts.errors')   
 </div>
 @endsection
