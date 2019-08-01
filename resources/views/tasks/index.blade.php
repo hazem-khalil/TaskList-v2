@@ -16,4 +16,7 @@
     </form>
     @include ('layouts.errors')   
 </div>
+
+@include ('layouts.render')
+
 @endsection

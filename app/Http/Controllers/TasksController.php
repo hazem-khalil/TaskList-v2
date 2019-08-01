@@ -15,7 +15,8 @@ class TasksController extends Controller
 
     public function index()
     {
-        return view('tasks.index');
+        $tasks = Task::all();
+        return view('tasks.index', compact('tasks'));
     }
 
     public function store(Request $request)
@@ -32,8 +33,10 @@ class TasksController extends Controller
         return redirect()->back();        
     }
 
-    public function destroy()
+    public function destroy(Task $task)
     {
-        // 
+        $task->delete();
+        
+        return redirect()->back();
     }
 }
