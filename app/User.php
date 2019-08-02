@@ -41,4 +41,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Task::class);
     }
+
+    public function publish(Task $task)
+    {
+        return $this->tasks()->save($task);
+    }
+
 }
